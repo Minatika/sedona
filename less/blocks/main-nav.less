@@ -1,0 +1,104 @@
+.main-nav {
+  width: 320px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.main-nav__toggle {
+  position: absolute;
+  top: 17px;
+  right: 20px;
+  z-index: 5;
+  width: 23px;
+  height: 22px;
+  font-size: 0;
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.main-nav--closed .main-nav__toggle {
+  background: url("../img/icon-menu.svg") no-repeat center;
+}
+
+.main-nav--opened .main-nav__toggle {
+  background: url("../img/icon-cross.svg") no-repeat center;
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &::after {
+    content: url("../img/shadow.png");
+    position: absolute;
+    top: 206px;
+    left: 0;
+  }
+}
+
+.main-nav__item {
+  padding: 7px 0;
+  border-top: 1px solid @color-light;
+  border-bottom: 1px solid @color-shadow;
+  font-size: 18px;
+  line-height: 40px;
+  color: @color-main;
+  text-align: center;
+  background-color: @color-secondary;
+
+  & a {
+    color: @color-main;
+    text-decoration: none;
+
+    &:active {
+      color: @color-main--active;
+    }
+  }
+
+  &:first-of-type {
+    padding-bottom: 8px;
+    border-top: none;
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: @color-secondary--dark;
+  }
+
+  &:active {
+    color: @color-main--active;
+    background-color: @color-secondary--dark;
+  }
+
+}
+
+.main-nav__item--active:hover, .main-nav__item--active:active {
+  color: @color-main;
+  background-color: @color-secondary;
+}
+
+@media @mobile-widths-only {
+
+  .main-nav--closed .main-nav__list {
+    display: none;
+  }
+
+  .main-nav--opened .main-nav__list {
+    display: block;
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--nojs .main-nav__list {
+    display: block;
+  }
+
+}
+

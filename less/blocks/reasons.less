@@ -1,0 +1,155 @@
+.reasons {
+  position: relative;
+  width: 320px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.reasons__header {
+  margin-bottom: 25px;
+  padding: 0 20px;
+}
+
+.reasons__header::after {
+  content: url("../img/bg-triangle.svg");
+  position: absolute;
+  top: 162px;
+  left: 0;
+  z-index: 5;
+}
+
+.reasons__title {
+  margin-bottom: 26px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  color: @color-text--dark;
+}
+
+.reasons__subtitle {
+  line-height: 26px;
+}
+
+.reasons__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: @color-main;
+}
+
+.reasons__item {
+  position: relative;
+  margin: 0;
+  padding: 26px 0 29px;
+  font-size: 14px;
+  line-height: 21px;
+  background-color: @color-gray;
+
+  &:first-of-type {
+    padding: 57px 0 0;
+    color: @color-main;
+    background-color: @color-secondary;
+  }
+    
+  &:nth-of-type(2) {
+    padding: 38px 0 0;
+    color: @color-main;
+    background-color: @color-secondary;
+  }
+    
+  &:nth-of-type(3)::after, &:nth-of-type(4)::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    width: 280px;
+    height: 1px;
+    background-color: @color-gray--dark;
+  }
+}
+
+.reasons__item-img {
+    display: block;
+}
+
+.reasons__item-title {
+  margin: 0;
+  padding: 0 20px;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.reasons__item-number {
+  margin: 0;
+  padding: 9px 20px 15px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.reasons__item-desc {
+  margin: 0;
+  padding: 0 20px 0;
+}
+
+.reasons__item:first-of-type .reasons__item-desc {
+  padding-bottom: 41px;
+}
+
+.reasons__item:nth-of-type(2) .reasons__item-desc {
+  padding-bottom: 40px;
+}
+
+.reasons__advice-list {
+  margin: 0;
+  padding: 20px 20px 24px;
+  list-style: none;
+  color: @color-text;
+  background-color: @color-main;
+}
+
+.reasons__advice-item {
+  position: relative;
+  padding: 14px 0 0 50px;
+  text-align: left;
+
+  &--first::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 2px;
+    width: 38px;
+    height: 36px;
+    background-image: url("../img/icon-house.svg");
+    background-size: 38px 36px;
+  }
+
+  &--second::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 32px;
+    height: 38px;
+    background-image: url("../img/icon-gift.svg");
+    background-size: 32px 38px;
+  }
+
+  &--third::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -1px;
+    width: 38px;
+    height: 35px;
+    background-image: url("../img/icon-burger.svg");
+    background-size: 38px 35px;
+  }
+}
+
+.reasons__advice-item-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 26px;
+  color: @color-text--dark;
+}
