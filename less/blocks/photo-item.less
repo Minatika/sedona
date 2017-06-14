@@ -1,0 +1,52 @@
+.photo-item {
+  position: relative;
+  padding: 22px 0 19px;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    width: 320px;
+    height: 1px;
+    background-color: @color-gray--light;
+  }
+}
+
+.photo-item__wrapper {
+  margin: 0;
+}
+
+.photo-item__title {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  color: @color-text--dark;
+}
+
+.photo-item__author {
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: none;
+}
+
+.photo-item__like {
+  position: relative;
+  margin: 7px 0 0;
+  padding-left: 36px;
+  line-height: 24px;
+  color: @color-text--dark;
+  font-weight: bold;
+  
+  &::before {
+    content: url("../../img/icon-like.svg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    opacity: 0.3;
+  }
+}

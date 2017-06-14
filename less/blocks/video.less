@@ -1,0 +1,120 @@
+.video {
+  position: relative;
+  width: 320px;
+  margin: 0 auto 135px;
+  padding-top: 18px;
+}
+
+.video__title {
+  margin-bottom: 26px;
+  padding: 0 20px;
+  font-size: 18px;
+  line-height: 26px;
+  color: @color-text--dark;
+  font-weight: bold;
+  text-align: center;
+}
+
+.video__desc {
+  margin-bottom: 35px;
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.video__controls {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  left: 20px;
+  bottom: -61px;
+  width: 280px;
+  height: 111px;
+  padding: 0;
+  background-image: linear-gradient(transparent 45px, @color-gray--video 46px;)
+}
+
+.video__timeline {
+  -webkit-appearance: none;
+  width: 280px;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: @color-dark;
+  
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+	box-sizing: content-box;
+    width: 9px;
+    height: 9px;
+    border: none;
+    background-color: @color-main;
+  }
+  
+  &::-moz-range-thumb {
+    width: 9px;
+    height: 9px;
+    border: none;
+    background-color: @color-main;
+  }
+  
+  &::-ms-thumb {
+    width: 9px;
+    height: 9px;
+    border: none;
+    background-color: @color-main;
+  }
+  
+  &::-webkit-slider-runnable-track {
+    width: 235px;
+    height: 3px;
+    background-color: @color-light;
+  }
+  
+  &::-moz-range-track {
+    width: 235px;
+    height: 3px;
+    background-color: @color-light;
+  }
+  
+  &::-ms-track {
+    width: 235px;
+    height: 3px;
+    border-color: transparent;
+	color: transparent;
+    background-color: @color-light;
+  }
+}
+
+.video__control {
+  margin-right: 25px;
+  
+  &:first-of-type {
+    margin-left: 25px;
+  }
+  
+  &:nth-of-type(2) {
+    margin-left: 108px;
+    margin-right: 31px;
+  }
+ 
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.video__control-icon {
+  fill: @color-controls;
+}
+
+.video__control:hover .video__control-icon {
+  fill: @color-text;
+}
+
+.video__control:active .video__control-icon {
+  fill: @color-text;
+  opacity: 0.3;
+}
