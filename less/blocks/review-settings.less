@@ -1,0 +1,223 @@
+.review-settings {
+  width: 320px;
+  box-sizing: border-box;
+  margin: 0 auto 72px;
+  padding: 0;
+}
+
+.review-settings__item {
+  width: 320px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 20px 5px;
+  border: none;
+  border-bottom: 1px solid @color-gray--light;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.review-settings__title {
+  width: 280px;
+  margin: 18px 0 21px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 26px;
+  color: @color-text--dark;
+  font-weight: bold;
+  text-align: center;
+
+  &--check, &--message {
+    margin-bottom: 16px;
+  }
+}
+
+.review-settings__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0;
+  width: 280px;
+}
+
+.review-settings__label {
+  display: block;
+  position: relative;
+  margin-right: 14px;
+  font-size: 14px;
+  line-height: 26px;
+
+  &--for-tel, &--for-email {
+    margin: 0 0 6px 22px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 32px;
+      right: 0;
+      width: 58px;
+      height: 58px;
+      background-color: @color-gray--input;
+    }
+  }
+
+  &--for-radio, &--for-checkbox {
+    width: 280px;
+    min-height: 56px;
+    box-sizing: border-box;
+    margin: 0 0 13px;
+    padding: 15px 0 15px 79px;
+    font-size: 18px;
+    line-height: 26px;
+    color: @color-text--dark;
+    font-weight: bold;
+    text-transform: none;
+
+    &:last-of-type {
+      margin-bottom: 24px;
+    }
+
+    &:hover::before {
+      background-color: @color-gray--light;
+    }
+
+    &:active::before {
+      background-color: @color-gray--dark;
+    }
+  }
+
+  &--for-checkbox {
+    margin-bottom: 24px;
+
+    &:last-of-type {
+      margin-bottom: 21px;
+    }
+  }
+
+  &--for-radio::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: @color-gray--video;
+  }
+
+  &--for-checkbox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 3px;
+    background-color: @color-gray--video;
+  }
+}
+
+.review-settings__input {
+  flex-grow: 2;
+  width: 150px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px 0 12px 21px;
+  font-size: 18px;
+  line-height: 26px;
+  font-family: "PT Sans", "Arial", sans-serif;
+  color: @color-text--dark;
+  font-weight: bold;
+  border: 4px solid @color-gray--video;
+  background-color: @color-gray--video;
+
+  &--message {
+    width: 280px;
+    height: 160px;
+    margin-bottom: 46px;
+    padding: 12px 17px;
+    resize: none;
+  }
+
+  &:hover {
+    border-color: @color-gray--light;
+    background-color: @color-gray--light;
+  }
+
+  &:focus {
+    background-color: @color-main;
+  }
+}
+
+.review-settings input[type="tel"] {
+  width: 280px;
+  margin-bottom: 43px;
+  padding-right: 58px;
+}
+
+.review-settings input[type="email"] {
+  width: 280px;
+  margin-bottom: 23px;
+  padding-right: 58px;
+}
+
+.review-settings__controls {
+  position: relative;
+}
+
+.review-settings__tel {
+  position: absolute;
+  top: 52px;
+  right: 20px;
+  width: 18px;
+  height: 18px;
+}
+
+.review-settings__email {
+  position: absolute;
+  bottom: 44px;
+  right: 21px;
+  width: 16px;
+  height: 16px;
+}
+
+.review-settings input[type="radio"] {
+  display: none;
+}
+
+.review-settings input[type="radio"]:checked + .review-settings__label--for-radio::after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: @color-text;
+}
+
+.review-settings input[type="radio"]:checked + .review-settings__label--for-radio:active::after {
+  opacity: 0.3;
+}
+
+.review-settings input[type="checkbox"] {
+  display: none;
+}
+
+.review-settings input[type="checkbox"]:checked + .review-settings__label--for-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  width: 24px;
+  height: 16px;
+  background: url("../img/icon-tick.svg") no-repeat center;
+  background-size: contain;
+}
+
+.review-settings input[type="checkbox"]:checked + .review-settings__label--for-checkbox:active::after {
+  opacity: 0.3;
+}
