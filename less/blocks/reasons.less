@@ -32,6 +32,9 @@
 }
 
 .reasons__list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -51,13 +54,13 @@
     color: @color-main;
     background-color: @color-secondary;
   }
-    
+
   &:nth-of-type(2) {
     padding: 38px 0 0;
     color: @color-main;
     background-color: @color-secondary;
   }
-    
+
   &:nth-of-type(3)::after, &:nth-of-type(4)::after {
     content: "";
     position: absolute;
@@ -102,7 +105,7 @@
 
 .reasons__advice-list {
   margin: 0;
-  padding: 20px 20px 24px;
+  padding: 20px 20px 23px;
   list-style: none;
   color: @color-text;
   background-color: @color-main;
@@ -110,46 +113,187 @@
 
 .reasons__advice-item {
   position: relative;
-  padding: 14px 0 0 50px;
+  display: flex;
+  flex-wrap: wrap;
   text-align: left;
+}
 
-  &--first::before {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 2px;
-    width: 38px;
-    height: 36px;
-    background-image: url("../img/icon-house.svg");
-    background-size: 38px 36px;
-  }
+.reasons__advice-icon-house {
+  width: 38px;
+  height: 36px;
+  margin: 6px 9px 0 2px;
+}
 
-  &--second::before {
-    content: "";
-    position: absolute;
-    top: 4px;
-    left: 5px;
-    width: 32px;
-    height: 38px;
-    background-image: url("../img/icon-gift.svg");
-    background-size: 32px 38px;
-  }
+.reasons__advice-icon-gift {
+  width: 32px;
+  height: 38px;
+  margin: 4px 13px 0 5px;
+}
 
-  &--third::before {
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: -1px;
-    width: 38px;
-    height: 35px;
-    background-image: url("../img/icon-burger.svg");
-    background-size: 38px 35px;
-  }
+.reasons__advice-icon-burger {
+  width: 38px;
+  height: 35px;
+  margin: 8px 12px 0 0;
 }
 
 .reasons__advice-item-title {
   margin: 0;
+  padding-top: 15px;
   font-size: 18px;
   line-height: 26px;
   color: @color-text--dark;
+  vertical-align: top;
+}
+
+.reasons__advice-item-desc {
+  width: 100%;
+  margin-top: 12px;
+  padding-left: 50px;
+}
+
+@media @tablet-widths {
+
+  .reasons {
+    .container();
+  }
+
+  .reasons__header {
+    margin-bottom: 52px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .reasons__title {
+    font-size: 21px;
+  }
+
+  .reasons__list {
+    flex-direction: row;
+  }
+
+  .reasons__item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 256px;
+    padding: 45px 50px 45px;
+    box-sizing: border-box;
+
+    &:first-of-type, &:nth-of-type(2) {
+      width: 100%;
+      padding-top: 0;
+    }
+
+    &:nth-of-type(3)::after, &:nth-of-type(4)::after {
+      display: none;
+    }
+  }
+
+  .reasons__item-col {
+    width: 256px;
+    padding: 44px 45px 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .reasons__item:nth-of-type(2) .reasons__item-col {
+    order: 2;
+  }
+
+  .reasons__item-title {
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 21px;
+  }
+
+  .reasons__item-number {
+    margin: 0 auto 21px;
+    padding: 0;
+  }
+
+  .reasons__item-desc {
+    padding: 0;
+    word-wrap: break-word;
+  }
+
+  .reasons__advice-list {
+    display: flex;
+    width: 100%;
+    padding: 57px 0 48px;
+    text-align: center;
+  }
+
+  .reasons__advice-item {
+    flex-direction: column;
+    align-items: center;
+    width: 256px;
+    box-sizing: border-box;
+    padding: 0 35px;
+    text-align: center;
+
+    &:nth-of-type(2) {
+      order: 1;
+    }
+  }
+
+  .reasons__advice-icon-house {
+    width: 75px;
+    height: 72px;
+    margin: 3px 0 0;
+  }
+
+  .reasons__advice-icon-gift {
+    width: 65px;
+    height: 75px;
+    margin: 0;
+  }
+
+  .reasons__advice-icon-burger {
+    width: 77px;
+    height: 68px;
+    margin: 6px 0 0;
+  }
+
+  .reasons__advice-item-title {
+    padding-top: 26px;
+    font-size: 21px;
+    line-height: 26px;
+    text-align: center;
+  }
+
+  .reasons__advice-item-desc {
+    margin-top: 21px;
+    padding-left: 0;
+  }
+}
+
+@media @desktop-widths {
+
+  .reasons__header {
+    padding: 0 260px;
+  }
+
+  .reasons__item {
+    width: 400px;
+    padding: 45px 60px 65px;
+  }
+
+  .reasons__item-col {
+    width: 400px;
+    padding: 51px 60px 0;
+  }
+
+  .reasons__item-title {
+    padding: 0 60px;
+  }
+
+  .reasons__advice-list {
+    padding-bottom: 69px;
+  }
+
+  .reasons__advice-item {
+    width: 400px;
+    padding: 0 50px;
+  }
 }
