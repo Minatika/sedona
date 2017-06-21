@@ -8,3 +8,15 @@
   text-transform: uppercase;
   background-color: @color-main;
 }
+
+@media @desktop-widths {
+  .page {
+    background-color: @color-gray--video;
+  }
+
+  .page__wrapper {
+    .container();
+    background-color: @color-main;
+    box-shadow: 5px 0 15px 0 @color-shadow, -5px 0 15px 0 @color-shadow;
+  }
+}
